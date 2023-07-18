@@ -111,4 +111,36 @@ class LinkedList {
     this.length++;
     return true
   }
+
+  remove(index) {
+    // Remove element at the given index
+    if (index === 0) return this.unshift(value);
+    if (index === this.length) return this.push(value);
+    if (index < 0 || index > this.length) return false;
+
+    let prev = this.get(index - 1);
+    let temp = prev.next;
+
+    prev.next = temp.next;
+    temp.next = null;
+    this.length--;
+    return temp;
+  }
+
+  reverse() {
+    // Reverse the linked list
+    let temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+
+    let next = temp.next;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
+        next = temp.next;
+        temp.next = prev;
+        prev = temp;
+        temp = next;
+    }
+    return this;
+  }
 }
