@@ -14,7 +14,7 @@ class LinkedList {
   }
 
   push(value) {
-    // Adds element at the end of the linked list
+    // Add element at the end of the linked list
     const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
@@ -28,7 +28,7 @@ class LinkedList {
   }
 
   pop() {
-    // Removes the last element of the linked list
+    // Remove the last element of the linked list
     if (!this.head) return undefined;
 
     let pre = this.head;
@@ -49,7 +49,7 @@ class LinkedList {
   }
 
   unshift(value) {
-    // Adds element at the begining of the linked list
+    // Add element at the begining of the linked list
     const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
@@ -63,7 +63,7 @@ class LinkedList {
   }
 
   shift() {
-    // Removes the first element of the linked list
+    // Remove the first element of the linked list
     if (!this.head) return undefined;
     let temp = this.head;
     this.head = this.head.next;
@@ -76,7 +76,7 @@ class LinkedList {
   }
 
   get(index) {
-    // Returns the node at the given index
+    // Return the node at the given index
     if (index < 0 || index >= this.length) {
       return undefined;
     }

@@ -15,6 +15,7 @@ class DoublyLinkedList {
   }
 
   push(value) {
+    // Add element at the end of the linked list
     const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
@@ -29,6 +30,7 @@ class DoublyLinkedList {
   }
 
   pop() {
+    // Remove the last element of the linked list
     if (!this.head) return undefined;
     const temp = this.tail;
     if (this.length === 1) {
@@ -44,6 +46,7 @@ class DoublyLinkedList {
   }
 
   unshift(value) {
+    // Add element at the begining of the linked list
     const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
@@ -58,6 +61,7 @@ class DoublyLinkedList {
   }
 
   shift() {
+    // Remove the first element of the linked list
     if (!this.head) return undefined;
     let temp = this.head;
     if (this.length === 1) {
@@ -73,6 +77,7 @@ class DoublyLinkedList {
   }
 
   get(index) {
+    // Return the node at the given index
     if (index < 0 || index > this.length) {
       return undefined;
     }
@@ -91,6 +96,7 @@ class DoublyLinkedList {
   }
 
   set(index, value) {
+    // Change the value of the node at the given index
     let temp = this.get(index);
     if (temp) {
       temp.value = value;
@@ -100,6 +106,7 @@ class DoublyLinkedList {
   }
 
   insert(index, value) {
+    // Insert a new node at the given index
     if (index === 0) return this.unshift(value);
     if (index === this.length) return this.push(value);
     if (index < 0 || index > this.length) return false;
@@ -117,6 +124,7 @@ class DoublyLinkedList {
   }
 
   remove(index) {
+    // Remove element at the given index
     if (index === 0) return this.shift(value);
     if (index === this.length - 1) return this.pop();
     if (index < 0 || index > this.length) return undefined;
